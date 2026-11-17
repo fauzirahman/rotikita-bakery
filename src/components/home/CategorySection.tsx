@@ -30,7 +30,7 @@ export function CategorySection() {
                 href={`/products?category=${category.id}`}
                 className="group flex flex-col items-center"
               >
-                <span className="relative block size-[88px] overflow-hidden rounded-full bg-blush transition-transform duration-200 group-hover:-translate-y-1 lg:size-[162px]">
+                <span className="relative block size-[88px] overflow-hidden rounded-full bg-blush shadow-[0_12px_22px_rgba(83,55,38,0.08)] transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_18px_28px_rgba(83,55,38,0.12)] lg:size-[162px]">
                   <Image
                     src={category.image}
                     alt=""

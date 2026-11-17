@@ -79,7 +79,7 @@ export function HeroSection() {
           </div>
 
           <div className="relative mt-7 lg:mt-[28px] lg:self-start">
-            <div className="relative h-[270px] overflow-hidden rounded-bl-[12px] rounded-br-[70px] rounded-tl-[70px] rounded-tr-[12px] bg-blush sm:h-[400px] lg:h-[594px] lg:rounded-bl-[16px] lg:rounded-br-[140px] lg:rounded-tl-[140px] lg:rounded-tr-[16px]">
+            <div className="relative h-[270px] overflow-hidden rounded-bl-[12px] rounded-br-[70px] rounded-tl-[70px] rounded-tr-[12px] bg-blush shadow-[0_22px_44px_rgba(92,54,25,0.08)] sm:h-[400px] lg:h-[594px] lg:rounded-bl-[16px] lg:rounded-br-[140px] lg:rounded-tl-[140px] lg:rounded-tr-[16px]">
               <Image
                 src="/images/hero/artisan-bread.png"
                 alt="Aneka roti artisan segar dalam keranjang anyaman"
@@ -90,7 +90,7 @@ export function HeroSection() {
               />
             </div>
 
-            <div className="absolute left-[-42px] top-[460px] hidden h-[90px] w-[218px] items-center gap-[15px] rounded-[10px] bg-white pl-[18px] shadow-[0_8px_24px_rgba(51,31,15,0.09)] lg:flex">
+            <div className="absolute left-[-42px] top-[460px] hidden h-[90px] w-[218px] items-center gap-[15px] rounded-[10px] bg-white pl-[18px] shadow-[0_12px_28px_rgba(51,31,15,0.12)] lg:flex">
               <Image
                 src="/icons/fresh-bread.svg"
                 alt=""

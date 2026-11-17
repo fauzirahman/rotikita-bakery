@@ -16,7 +16,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const { id, name, price, rating, reviewCount, image, badge } = product;
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-xl border border-card-line bg-white lg:min-h-[438px] lg:p-[11px]">
+    <article className="flex h-full flex-col overflow-hidden rounded-xl border border-card-line bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_18px_35px_rgba(87,51,29,0.08)] lg:min-h-[438px] lg:p-[11px]">
       <div className="relative h-[145px] overflow-hidden bg-blush lg:h-[246px] lg:rounded-lg">
         <Image
           src={image}
