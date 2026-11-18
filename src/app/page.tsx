@@ -5,20 +5,11 @@ import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { PromoSection } from "@/components/home/PromoSection";
 import { TestimonialSection } from "@/components/home/TestimonialSection";
 import { WhyChooseUsSection } from "@/components/home/WhyChooseUsSection";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
+import { PageLayout } from "@/components/layout/PageLayout";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col bg-cream font-body text-ink">
-      <a
-        href="#konten"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand focus:px-4 focus:py-2 focus:text-white"
-      >
-        Lewati ke konten utama
-      </a>
-      <Header activeHref="/" />
-      <main id="konten" className="flex-1">
+    <PageLayout activeHref="/">
         <HeroSection />
         <CategorySection />
         <BestSellerSection />
@@ -26,8 +17,6 @@ export default function Home() {
         <WhyChooseUsSection />
         <TestimonialSection />
         <NewsletterSection />
-      </main>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }

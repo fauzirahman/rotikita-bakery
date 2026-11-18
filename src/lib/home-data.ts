@@ -25,10 +25,10 @@ export const siteInfo = {
 export const navLinks: NavLink[] = [
   { label: "Beranda", href: "/" },
   { label: "Semua Roti", href: "/products" },
-  { label: "Kategori", href: "/#kategori" },
-  { label: "Promo", href: "/#promo" },
-  { label: "Tentang Kami", href: "/#tentang" },
-  { label: "Kontak", href: "/#kontak" },
+  { label: "Kategori", href: "/categories" },
+  { label: "Promo", href: "/promo" },
+  { label: "Tentang Kami", href: "/about" },
+  { label: "Kontak", href: "/contact" },
 ];
 
 export const categories: Category[] = [
@@ -147,26 +147,26 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-// TODO: the pages behind the "#" links below do not exist yet.
 export const footerColumns: FooterColumn[] = [
   {
     title: "Jelajahi",
     links: [
       { label: "Beranda", href: "/" },
       { label: "Semua Roti", href: "/products" },
-      { label: "Kategori", href: "/#kategori" },
-      { label: "Promo", href: "/#promo" },
-      { label: "Tentang Kami", href: "/#tentang" },
+      { label: "Kategori", href: "/categories" },
+      { label: "Promo", href: "/promo" },
+      { label: "Tentang Kami", href: "/about" },
+      { label: "Kontak", href: "/contact" },
     ],
   },
   {
     title: "Layanan Pelanggan",
     links: [
-      { label: "Cara Pemesanan", href: "#" },
-      { label: "Pengiriman", href: "#" },
-      { label: "FAQ", href: "#" },
-      { label: "Kebijakan Privasi", href: "#" },
-      { label: "Syarat & Ketentuan", href: "#" },
+      { label: "Cara Pemesanan", href: "/products" },
+      { label: "Pengiriman", href: "/contact" },
+      { label: "FAQ", href: "/contact#faq" },
+      { label: "Kebijakan Privasi", href: "/contact#faq" },
+      { label: "Syarat & Ketentuan", href: "/promo#syarat" },
     ],
   },
 ];

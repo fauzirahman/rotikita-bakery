@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/common/Button";
 import { CartButton } from "@/components/layout/CartButton";
+import { AccountButton } from "@/components/layout/AccountButton";
 import { Logo } from "@/components/layout/Logo";
 import { SearchButton } from "@/components/layout/SearchButton";
 import { siteInfo } from "@/lib/home-data";
@@ -36,7 +37,13 @@ function CloseIcon() {
 }
 
 /** Hamburger button plus the full-screen mobile menu. Hidden from `lg` up. */
-export function MobileNav({ links }: { links: NavLink[] }) {
+export function MobileNav({
+  links,
+  activeHref,
+}: {
+  links: NavLink[];
+  activeHref?: string;
+}) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
 
@@ -65,7 +72,7 @@ export function MobileNav({ links }: { links: NavLink[] }) {
         aria-label="Buka menu"
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="-ml-2 flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-md text-ink transition-colors hover:bg-blush lg:hidden"
+        className="-ml-2 flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-md text-ink transition-colors hover:bg-blush xl:hidden"
       >
         <MenuIcon />
       </button>
@@ -76,7 +83,7 @@ export function MobileNav({ links }: { links: NavLink[] }) {
           role="dialog"
           aria-modal="true"
           aria-label="Menu navigasi"
-          className="fixed inset-0 z-50 overflow-y-auto bg-cream lg:hidden"
+          className="fixed inset-0 z-50 overflow-y-auto bg-cream xl:hidden"
         >
           <div className="flex h-[72px] items-center gap-3 px-5">
             <button
@@ -90,6 +97,7 @@ export function MobileNav({ links }: { links: NavLink[] }) {
             <Logo />
             <div className="-mr-1 ml-auto flex items-center gap-3">
               <SearchButton />
+              <AccountButton />
               <CartButton />
             </div>
           </div>
@@ -106,7 +114,10 @@ export function MobileNav({ links }: { links: NavLink[] }) {
                   <Link
                     href={link.href}
                     onClick={close}
-                    className="flex h-[59px] items-center justify-between px-1 font-display text-[28px] leading-[38px] text-ink transition-colors hover:text-brand"
+                    aria-current={link.href === activeHref ? "page" : undefined}
+                    className={`flex h-[59px] items-center justify-between px-1 font-display text-[28px] leading-[38px] transition-colors hover:text-brand ${
+                      link.href === activeHref ? "text-brand" : "text-ink"
+                    }`}
                   >
                     <span>{link.label}</span>
                     <span aria-hidden="true" className="text-[24px] text-brand">

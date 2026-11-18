@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/common/Button";
 import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
+import { AccountButton } from "@/components/layout/AccountButton";
 import { CartButton } from "@/components/layout/CartButton";
 import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/layout/Logo";
@@ -19,13 +20,13 @@ export function Header({ activeHref = "/" }: HeaderProps) {
     <header className="bg-cream">
       <AnnouncementBar />
       <Container>
-        <div className="flex h-[72px] items-center gap-3 lg:h-[103px] lg:gap-0">
-          <MobileNav links={navLinks} />
-          <Logo className="shrink-0 xl:w-[313px]" />
+        <div className="flex h-[72px] items-center gap-3 xl:h-[103px] xl:gap-0">
+          <MobileNav links={navLinks} activeHref={activeHref} />
+          <Logo className="shrink-0 xl:w-[260px] 2xl:w-[313px]" />
 
           <nav
             aria-label="Navigasi utama"
-            className="hidden flex-1 items-center gap-10 pl-10 lg:flex xl:pl-0"
+            className="hidden flex-1 items-center justify-center gap-6 xl:flex 2xl:gap-8"
           >
             {navLinks.map((link) => {
               const active = link.href === activeHref;
@@ -35,7 +36,7 @@ export function Header({ activeHref = "/" }: HeaderProps) {
                   href={link.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative text-[13px] leading-5 transition-colors hover:text-brand",
+                    "relative whitespace-nowrap text-[12px] leading-5 transition-colors hover:text-brand 2xl:text-[13px]",
                     active
                       ? "font-semibold text-brand after:absolute after:left-0 after:top-7 after:h-0.5 after:w-full after:bg-brand"
                       : "text-ink",
@@ -47,15 +48,20 @@ export function Header({ activeHref = "/" }: HeaderProps) {
             })}
           </nav>
 
-          <div className="-mr-1 ml-auto flex items-center gap-3 lg:mr-0 lg:gap-2">
+          <div className="-mr-1 ml-auto flex items-center gap-1 xl:mr-0 xl:gap-1">
             <SearchButton />
+            <span className="xl:hidden">
+              <AccountButton />
+            </span>
             <CartButton />
-            <Button
-              href="/login"
-              className="ml-3 hidden h-11 w-[124px] rounded-md text-[13px] lg:inline-flex"
-            >
-              Login
-            </Button>
+            <span className="hidden xl:block">
+              <Button
+                href="/login"
+                className="ml-2 h-11 w-[100px] rounded-md text-[13px] 2xl:ml-3 2xl:w-[124px]"
+              >
+                Login
+              </Button>
+            </span>
           </div>
         </div>
         <div className="h-px bg-line" />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { FooterNewsletter } from "@/components/layout/FooterNewsletter";
 import { Logo } from "@/components/layout/Logo";
 import { footerColumns, siteInfo } from "@/lib/home-data";
 
@@ -128,6 +129,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+        <FooterNewsletter />
 
         <div className="mt-9 border-t border-footer-line pt-7 text-[11px] leading-[1.6] text-footer-muted lg:mt-[79px] lg:flex lg:items-start lg:justify-between lg:pt-[31px]">
           <p>

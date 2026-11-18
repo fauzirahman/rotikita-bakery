@@ -7,6 +7,8 @@ export type Category = {
   id: string;
   name: string;
   image: string;
+  description?: string;
+  productCount?: number;
 };
 
 export type Product = {
@@ -18,6 +20,9 @@ export type Product = {
   reviewCount: number;
   image: string;
   badge?: string;
+  description?: string;
+  categoryId?: string;
+  originalPrice?: number;
 };
 
 export type Feature = {
